@@ -1,0 +1,206 @@
+have_library: checking for xmlNewDoc() in -lxml2... -------------------- yes
+
+"gcc -o conftest -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99 conftest.c  -L. -L/opt/plesk/ruby/2.4.4/lib64 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic  -m64   -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L/opt/plesk/ruby/2.4.4/lib64 -lruby-static  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99 conftest.c  -L. -L/opt/plesk/ruby/2.4.4/lib64 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic  -m64   -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L/opt/plesk/ruby/2.4.4/lib64 -lruby-static -lxml2  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘xmlNewDoc’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlNewDoc; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlNewDoc; return !p; }
+/* end */
+
+"gcc -o conftest -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99 conftest.c  -L. -L/opt/plesk/ruby/2.4.4/lib64 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic  -m64   -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L/opt/plesk/ruby/2.4.4/lib64 -lruby-static -lxml2  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void xmlNewDoc();
+14: int t(void) { xmlNewDoc(); return 0; }
+/* end */
+
+--------------------
+
+"pkg-config --exists libxml-2.0"
+| pkg-config --libs libxml-2.0
+=> "-lxml2  \n"
+"gcc -o conftest -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99 conftest.c  -L. -L/opt/plesk/ruby/2.4.4/lib64 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic  -m64  -lxml2  -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L/opt/plesk/ruby/2.4.4/lib64 -lruby-static -lxml2 -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+| pkg-config --cflags-only-I libxml-2.0
+=> "-I/usr/include/libxml2  \n"
+| pkg-config --cflags-only-other libxml-2.0
+=> " \n"
+| pkg-config --libs-only-l libxml-2.0
+=> "-lxml2  \n"
+package configuration for libxml-2.0
+cflags: 
+ldflags: 
+libs: -lxml2
+
+find_header: checking for nokogiri.h in /var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri... -------------------- yes
+
+"gcc -E -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -I/usr/include/libxml2 -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99   conftest.c -o conftest.i"
+conftest.c:3:22: fatal error: nokogiri.h: No such file or directory
+ #include <nokogiri.h>
+                      ^
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <nokogiri.h>
+/* end */
+
+"gcc -E -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -I/usr/include/libxml2 -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99  -I/var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri conftest.c -o conftest.i"
+In file included from conftest.c:3:0:
+/var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri/nokogiri.h:13:0: warning: "_GNU_SOURCE" redefined [enabled by default]
+ #define _GNU_SOURCE
+ ^
+In file included from /opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/ruby.h:24:0,
+                 from /opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby.h:33,
+                 from conftest.c:1:
+/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux/ruby/config.h:17:0: note: this is the location of the previous definition
+ #define _GNU_SOURCE 1
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <nokogiri.h>
+/* end */
+
+--------------------
+
+find_header: checking for nokogiri.h in /var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri... -------------------- yes
+
+"gcc -E -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -I/usr/include/libxml2 -I/var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99   conftest.c -o conftest.i"
+In file included from conftest.c:3:0:
+/var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri/nokogiri.h:13:0: warning: "_GNU_SOURCE" redefined [enabled by default]
+ #define _GNU_SOURCE
+ ^
+In file included from /opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/ruby.h:24:0,
+                 from /opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby.h:33,
+                 from conftest.c:1:
+/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux/ruby/config.h:17:0: note: this is the location of the previous definition
+ #define _GNU_SOURCE 1
+ ^
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <nokogiri.h>
+/* end */
+
+--------------------
+
+have_library: checking for gumbo_parse() in -lgumbo... -------------------- no
+
+"gcc -o conftest -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -I/usr/include/libxml2 -I/var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99  -DNGLIB conftest.c  -L. -L/opt/plesk/ruby/2.4.4/lib64 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic   -m64  -lxml2  -lxml2 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L/opt/plesk/ruby/2.4.4/lib64 -lruby-static -lgumbo -lxml2  -lxml2 -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13:57: error: ‘gumbo_parse’ undeclared (first use in this function)
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))gumbo_parse; return !p; }
+                                                         ^
+conftest.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))gumbo_parse; return !p; }
+/* end */
+
+"gcc -o conftest -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/x86_64-linux -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0/ruby/backward -I/opt/plesk/ruby/2.4.4/include/ruby-2.4.0 -I. -I/usr/include/libxml2 -I/var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.2/ext/nokogiri -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic   -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -mtune=generic -std=c99  -DNGLIB conftest.c  -L. -L/opt/plesk/ruby/2.4.4/lib64 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic   -m64  -lxml2  -lxml2 -Wl,-rpath,/opt/plesk/ruby/2.4.4/lib64 -L/opt/plesk/ruby/2.4.4/lib64 -lruby-static -lgumbo -lxml2  -lxml2 -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+/usr/bin/ld: cannot find -lgumbo
+collect2: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void gumbo_parse();
+14: int t(void) { gumbo_parse(); return 0; }
+/* end */
+
+--------------------
+
+find_type: checking for GumboErrorType with error.h... -------------------- not found
+
+--------------------
+
+find_type: checking for GumboInsertionMode with insertion_mode.h... -------------------- not found
+
+--------------------
+
+find_type: checking for GumboParser with parser.h... -------------------- not found
+
+--------------------
+
+find_type: checking for GumboStringBuffer with string_buffer.h... -------------------- not found
+
+--------------------
+
+find_type: checking for GumboTokenType with token_type.h... -------------------- not found
+
+--------------------
+

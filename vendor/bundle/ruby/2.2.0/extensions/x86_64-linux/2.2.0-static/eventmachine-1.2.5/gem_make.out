@@ -1,0 +1,12 @@
+/opt/plesk/ruby/2.2.10/bin/ruby -r ./siteconf20180902-19115-u2twy1.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20180902-19115-kiax5b

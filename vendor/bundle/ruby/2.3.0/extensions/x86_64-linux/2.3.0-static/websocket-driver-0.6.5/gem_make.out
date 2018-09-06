@@ -1,0 +1,15 @@
+current directory: /var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+/opt/plesk/ruby/2.3.7/bin/ruby -r ./siteconf20180901-3583-13gb18v.rb extconf.rb
+creating Makefile
+
+current directory: /var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /var/www/vhosts/icc-intranet.ga/httpdocs/site/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20180901-3583-4fixma

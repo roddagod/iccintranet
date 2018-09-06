@@ -1,0 +1,11 @@
+
+To use local observr executable for dev work:
+
+  $ ruby -rubygems -Ilib ./bin/observr -d specs.observr
+
+To force a specific handler:
+
+  $ HANDLER=protable observr -d specs.observr
+  $ HANDLER=unix observr -d specs.observr
+
+  (see Observr.handler)

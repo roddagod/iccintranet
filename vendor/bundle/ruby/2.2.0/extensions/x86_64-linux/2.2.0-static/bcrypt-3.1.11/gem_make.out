@@ -1,0 +1,15 @@
+/opt/plesk/ruby/2.2.10/bin/ruby -r ./siteconf20180902-19115-yee417.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling wrapper.c
+compiling crypt_gensalt.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling bcrypt_ext.c
+linking shared-object bcrypt_ext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20180902-19115-1y0mgos

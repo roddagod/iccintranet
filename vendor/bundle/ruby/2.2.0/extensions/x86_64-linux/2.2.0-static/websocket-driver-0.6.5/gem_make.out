@@ -1,0 +1,11 @@
+/opt/plesk/ruby/2.2.10/bin/ruby -r ./siteconf20180902-19115-1t4tlb0.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20180902-19115-capbk3

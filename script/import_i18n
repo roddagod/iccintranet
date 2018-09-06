@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+SOURCE = ARGV[0] || "#{ENV['HOME']}/Downloads/OneBody.zip"
+
+require 'fileutils'
+
+Dir[SOURCE].each do |path|
+  puts path
+  `unzip "#{path}" -d /tmp/i18n`
+  locale = nil
+  Dir['/tmp/i18n/*'].each do |dir|
+    next unless File.directory?(dir)
+    dest = File.split(dir).last
+    Dir[File.join(dir, '*')].each do |file|
+      locale = File.split(file).last.split('.').first
+      FileUtils.mkdir_p("config/locales/#{locale}")
+      `mv #{file} config/locales/#{locale}/#{dest}`
+    end
+  end
+  `rm -rf /tmp/i18n`
+  puts "  #{locale}"
+end

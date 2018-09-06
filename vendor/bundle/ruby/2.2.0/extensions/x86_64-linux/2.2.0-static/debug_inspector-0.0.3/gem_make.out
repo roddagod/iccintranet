@@ -1,0 +1,11 @@
+/opt/plesk/ruby/2.2.10/bin/ruby -r ./siteconf20180902-19115-f1xmib.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20180902-19115-imd3au

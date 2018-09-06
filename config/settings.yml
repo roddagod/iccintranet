@@ -1,0 +1,259 @@
+---
+Contact:
+  Tech Support Email:
+    format: string
+    value: admin@example.com
+  Community Email:
+    format: string
+    value: info@example.com
+  Community Office Phone:
+    format: string
+    value: (123) 456-7890
+  Bug Notification Email:
+    format: string
+    value: admin@example.com
+    global: true
+  Send Email Changes To:
+    format: string
+    value: admin@example.com
+  Send Attendance Submissions To:
+    format: string
+    value: admin@example.com
+  Community Address:
+    format: string
+    value: 123 West Imaginary Street, Broken Arrow, OK 12345-6789
+  Send Updates To:
+    format: string
+    value: admin@example.com
+Name:
+  Community:
+    format: string
+    value: One Church
+  Site:
+    format: string
+    value: CHURCH.IO
+  Slogan:
+    format: string
+    value: Welcome home.
+Features:
+  Multisite:
+    format: boolean
+    value: false
+    global: true
+  SSL:
+    format: boolean
+    value: false
+    global: true
+  Sign Up:
+    format: boolean
+    value: false
+  Groups:
+    format: boolean
+    value: true
+  Pictures:
+    format: boolean
+    value: true
+  Notes:
+    format: boolean
+    value: true
+  Friends:
+    format: boolean
+    value: true
+  Sign Up Approval Email:
+    format: string
+    value:
+  Verses:
+    format: boolean
+    value: true
+  Recipes:
+    format: boolean
+    value: false
+  Updates Must Be Approved:
+    format: boolean
+    value: true
+  Notify on Photo Change:
+    format: boolean
+    value: true
+  Edit Legacy Ids:
+    format: boolean
+    value: false
+  Custom Person Type:
+    format: boolean
+    value: false
+  News Page:
+    format: boolean
+    value: true
+  News by Users:
+    format: boolean
+    value: true
+  Stream:
+    format: boolean
+    value: true
+  Checkin:
+    format: boolean
+    value: false
+  Documents:
+    format: boolean
+    value: false
+  Business Directory:
+    format: boolean
+    value: false
+  Small Group Size:
+    format: string
+    value: 75
+Services:
+  Analytics:
+    format: string
+    value:
+Pusher:
+  App ID:
+    format: string
+    value:
+  App Key:
+    format: string
+    value:
+  Secret:
+    format: string
+    value:
+  API Scheme:
+    format: string
+    value: http
+  API Host:
+    format: string
+    value: api.pusherapp.com
+  API Port:
+    format: string
+    value: 80
+  WS Host:
+    format: string
+    value: ws.pusherapp.com
+  WS Port:
+    format: string
+    value: 80
+  WSS Port:
+    format: string
+    value: 443
+Facebook:
+  App ID:
+    format: string
+  App Secret:
+    format: string
+URL:
+  Visitor:
+    format: string
+    value: http://example.com
+  Site:
+    format: string
+    value: http://members.example.com
+    hidden: true
+  News Feed:
+    format: string
+    value:
+System:
+  Language:
+    format: string
+    value: en
+  Bible Translation:
+    format: string
+    value: web
+  Default Country:
+    format: string
+    value: US
+  Suffixes:
+    format: list
+    value: |
+      Jr.
+      Sr.
+      II
+      III
+  Time Zone:
+    format: string
+    value: Central Time (US & Canada)
+  Online Only Relationships:
+    format: list
+    hidden: true
+    value:
+  Map Zoom Level:
+    format: string
+    value: 13
+  Adult Age:
+    format: string
+    value: 18
+Formats:
+  Full Date and Time:
+    format: string
+    value: "%m/%d/%Y %I:%M %p"
+  Time:
+    format: string
+    value: "%I:%M %p"
+  Phone:
+    format: string
+    value: (ddd) ddd-dddd
+  Mobile Phone:
+    format: string
+    value: (ddd) ddd-dddd
+  Date:
+    format: string
+    value: "%m/%d/%Y"
+  Date Without Year:
+    format: string
+    value: "%b %d"
+Appearance:
+  Theme Primary Color:
+    format: string
+    value: 5F9128
+  Theme Secondary Color:
+    format: string
+    value: 3286B5
+  Theme Top Color:
+    format: string
+    value: 333333
+  Theme Nav Color:
+    format: string
+    value: E4E4E4
+  Theme:
+    format: string
+    value: skin-blue-light
+Privacy:
+  Allow Unencrypted Logins:
+    format: boolean
+    value: false
+  Max Sign in Attempts:
+    format: string
+    value: 10
+  Minimum Password Characters:
+    format: string
+    value: 6
+  Require Strong Password:
+    format: boolean
+    value: false
+  Share Address by Default:
+    format: boolean
+    value: true
+  Share Home Phone by Default:
+    format: boolean
+    value: true
+  Share Mobile Phone by Default:
+    format: boolean
+    value: false
+  Share Work Phone by Default:
+    format: boolean
+    value: false
+  Share Fax by Default:
+    format: boolean
+    value: false
+  Share Email by Default:
+    format: boolean
+    value: false
+  Share Birthday by Default:
+    format: boolean
+    value: true
+  Share Anniversary by Default:
+    format: boolean
+    value: true
+  Allow Picture Comments:
+    format: boolean
+    value: true
+  Hide Contact Details in Messages:
+    format: boolean
+    value: true
